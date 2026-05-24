@@ -37,3 +37,20 @@ Install dependencies:
 
 ```bash
 npm install
+
+## Public key validation
+
+Validate the public key configured in `.env`:
+
+```bash
+npm run validate:public-key
+```
+
+Validate a public key passed directly as a CLI argument:
+
+```bash
+npm run validate:public-key -- YOUR_PUBLIC_DEVNET_ADDRESS
+```
+
+This script only checks that the value can be parsed as a Solana `PublicKey`.
+It does not make any RPC request, does not use a private key, does not sign, and does not send anything.
