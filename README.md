@@ -1,55 +1,39 @@
-# Solana Devnet Wallet Lab
+# Solana DEVnet Wallet Lab
 
-Small public learning repo for safe Solana Devnet experiments.
+Small safe Solana Devnet wallet lab focused on public wallet reads and local instruction previews.
 
-This repository is intentionally simple and does **not** include private keys, seeds, wallet exports, or mainnet logic.
+This repository is intentionally simple. It is meant to explore Solana Devnet basics without exposing private keys, without sending transactions, and without touching mainnet.
 
-## What it does
+## Goals
 
-- Reads the SOL balance of a public wallet address on Devnet.
-- Builds a local 0-lamport self-transfer instruction preview.
-- Prints the instruction accounts for review.
-- Does not sign, simulate, or send a transaction.
+- Read a public wallet SOL balance on Solana Devnet.
+- Validate a public Solana address.
+- Build a local non-sending instruction preview.
+- Keep all examples safe and easy to inspect.
+
+## Safety scope
+
+This project does **not**:
+
+- store private keys;
+- ask for a seed phrase;
+- sign transactions;
+- send transactions;
+- read token accounts;
+- read DeFi positions;
+- interact with mainnet.
+
+Only public addresses and Solana Devnet RPC calls are used.
 
 ## Requirements
 
-- Node.js 20+
-- pnpm
-- A public Solana Devnet wallet address
+- Node.js
+- npm
+- Optional: Solana CLI for external Devnet checks and airdrops
 
 ## Setup
 
-```bash
-pnpm install
-cp .env.example .env
-```
-
-Edit `.env` and set:
+Install dependencies:
 
 ```bash
-PUBLIC_KEY=YourDevnetPublicKeyHere
-```
-
-## Commands
-
-Check Devnet SOL balance:
-
-```bash
-pnpm devnet:balance
-```
-
-Build a local non-sending instruction preview:
-
-```bash
-pnpm devnet:preview
-```
-
-Run TypeScript typecheck:
-
-```bash
-pnpm typecheck
-```
-
-## Safety notes
-
-This repo is Devnet-only by design. It never asks for a private key and never imports a seed phrase. All examples use public wallet addresses only.
+npm install
