@@ -54,3 +54,7 @@ npm run validate:public-key -- YOUR_PUBLIC_DEVNET_ADDRESS
 
 This script only checks that the value can be parsed as a Solana `PublicKey`.
 It does not make any RPC request, does not use a private key, does not sign, and does not send anything.
+
+## License
+
+This project is licensed under the MIT License.
